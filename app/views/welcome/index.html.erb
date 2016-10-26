@@ -19,9 +19,15 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav" id="list">
+                <% unless podcast_signed_in? %>
                 <li><a href="#">Explore</a></li>
-                <li><a href="#">Sign In</a></li>
-                <li><a href="#">Create a podcast</a></li>
+                <li><%= link_to "Sign In", new_podcast_session_path %></li>
+                <li><%= link_to "Create A Podcast", new_podcast_registration_path %></li>
+                <% else %>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><%= link_to "Sign Out", destroy_podcast_session_path, method: :delete %></li>
+                <% end %>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -31,7 +37,7 @@
     </header>
     <div class="wrapper_skinny">
       <h1>Discover your new favorite podcast.</h1>
-      <a href="#" class="button button_highlight">Create a Podcast</a>
+      <%= link_to "Create A Podcast", new_podcast_registration_path, class: "button button_highlight" %>
       <a href="#" class="button button_white">Explore</a>
     </div>
   </div>
