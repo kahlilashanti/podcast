@@ -14,7 +14,7 @@
 #main_header {
   color: black;
   background: white;
-  padding: 1rem 0 3rem 0;
+  // padding: 1rem 0 3rem 0;
 }
 
 body {
@@ -54,7 +54,7 @@ ul {
 .button_white {
   background: white;
   color: black;
-  transition: background .4s ease-in-out;
+
 }
 
 #logo {
@@ -68,6 +68,7 @@ ul {
 
 
 .wrapper_wide{
+  padding-top: 2rem;
   width: 90%;
   margin: 0 auto;
 }
@@ -84,24 +85,17 @@ ul {
 
 
 
-h1 {
-  color: white;
-  font-size: 3.5rem;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-align: center;
-  margin: 0;
-  padding: 8rem 0;
-}
+// h1 {
+//   color: white;
+//   font-size: 3.5rem;
+//   font-weight: 300;
+//   letter-spacing: 1px;
+//   text-align: center;
+//   margin: 0;
+//   // padding: 3rem 0;
+// }
 
-// .cf :before, .cf :after {
-//   content: "";
-//   display: table;
-// }
-//
-// .cf :after {
-//   clear: both;
-// }
+
 
 #list li {
     list-style-type: none;
@@ -154,4 +148,4 @@ input[type="email"], input[type="text"], input[type="password"], textarea {
     }
 
     @import 'podcasts';
-    
+    @import 'podcast_page';
