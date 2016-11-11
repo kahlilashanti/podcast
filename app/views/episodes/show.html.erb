@@ -12,10 +12,19 @@
     <%= link_to podcasts_path do %>
       All Podcasts
       <span>/</span>
-      Seths Podcast
+      <%= link_to @podcast.title, podcast_path(@podcast) %>
+      <span>/</span>
+      <%= @episode.title %>
     <% end %>
   </div>
 
+  <div id="episode_content">
+    <div class="wrapper_skinny">
+      <%= image_tag("richardp.jpeg", :alt=>"Richard Pryor") %>
+      <h2><%= @episode.title %></h2>
+      <p class="description"><%= @episode.description %></p>
+    </div>
+  </div>
 
 
   <div id="episodes">
@@ -24,13 +33,13 @@
         <%= @episodes.each do |episode| %>
             <li class="episode_list">
               <div class="episode_thumbnail">
-                <a href="#">
+                <a href="episode.html">
                   <%= image_tag("richardp.jpeg", :alt=>"Richard Pryor") %>
                 </a>
               </div>
               <div class="episode_overview">
                 <h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
-                <p class="rich_description"><%= truncate(episode.description, length: 150) %></p>
+                <p class="rich_description"><%= truncate(episode.description, length: 100) %></p>
               </div>
             </li>
         <% end %>
